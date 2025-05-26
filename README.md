@@ -19,11 +19,13 @@ Este monorepo contiene la aplicación completa del Geo Processor, utilizando Git
 ### Configuración inicial
 
 1. Clonar el repositorio con submódulos:
+
 ```bash
 git clone --recursive <url-del-repo>
 ```
 
 O si ya clonaste el repo:
+
 ```bash
 git submodule init
 git submodule update
