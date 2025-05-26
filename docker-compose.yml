@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   # Frontend Service (Next.js)
   frontend:
@@ -7,10 +5,10 @@ services:
       context: ./geo-processor-frontend
       dockerfile: docker/Dockerfile
     ports:
-      - "3001:3000"
+      - "3001:3001"
     environment:
       - NODE_ENV=production
-      - NEXT_PUBLIC_API_URL=http://localhost:3000
+      - NEST_PUBLIC_API_BASE_URL=http://gateway:3000
     depends_on:
       - gateway
     restart: unless-stopped
@@ -20,7 +18,7 @@ services:
       test:
         [
           "CMD-SHELL",
-          "wget --no-verbose --tries=1 --spider http://localhost:3000/api/health || exit 1",
+          "wget --no-verbose --tries=1 --spider http://localhost:3001/api/health || exit 1",
         ]
       interval: 30s
       timeout: 10s
@@ -39,7 +37,7 @@ services:
       - NODE_ENV=production
       - PORT=3000
       - PYTHON_SERVICE_URL=http://backend:8000
-      - FRONTEND_URL=http://frontend:3000
+      - FRONTEND_URL=http://localhost:3001
       - CACHE_TTL=300
       - CACHE_MAX_ITEMS=100
       - LOG_LEVEL=info
