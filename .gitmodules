@@ -1,0 +1,9 @@
+[submodule "geo-processor-api-backend"]
+	path = geo-processor-api-backend
+	url = https://github.com/cristian-home/geo-processor-api-backend.git
+[submodule "geo-processor-api-gateway"]
+	path = geo-processor-api-gateway
+	url = https://github.com/cristian-home/geo-processor-api-gateway.git
+[submodule "geo-processor-frontend"]
+	path = geo-processor-frontend
+	url = https://github.com/cristian-home/geo-processor-frontend.git
