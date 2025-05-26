@@ -1,6 +1,6 @@
 # Geo Processor Monorepo
 
-Este monorepo contiene la aplicación completa del Geo Processor, que incluye:
+Este monorepo contiene la aplicación completa del Geo Processor, utilizando Git submodules para gestionar cada servicio de forma independiente.
 
 ## Servicios
 
@@ -14,14 +14,25 @@ Este monorepo contiene la aplicación completa del Geo Processor, que incluye:
 
 - Docker y Docker Compose
 - Git con gitflow
+- Git submodules
 
 ### Configuración inicial
 
-1. Clonar el repositorio
+1. Clonar el repositorio con submódulos:
+```bash
+git clone --recursive <url-del-repo>
+```
+
+O si ya clonaste el repo:
+```bash
+git submodule init
+git submodule update
+```
+
 2. Ejecutar los servicios:
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 ### Arquitectura
@@ -29,6 +40,10 @@ docker-compose up --build
 ```
 Frontend (3001) → API Gateway (3000) → Backend (8000)
 ```
+
+### Submódulos
+
+Este proyecto utiliza Git submodules. Para más información sobre gestión de submódulos, consulta [SUBMODULES.md](./SUBMODULES.md).
 
 ### Gitflow
 
